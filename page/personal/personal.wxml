@@ -1,0 +1,38 @@
+<view class="p_root">
+     <image class="p_header_img" src="../../images/default_header.jpg" mode="aspectFill"></image>
+     <view class="p_edit">点击编辑头像</view>
+     <view class="p_content">
+
+        <view class="p_name_class">
+            <view class="p_name_label">昵称</view>
+            <image class="p_next" src="../../images/next.png"></image>
+            <view class="p_real_name">未设置</view>
+        </view>
+
+        <view class="line"></view>
+        <view class="p_name_class">
+            <view class="p_name_label">微信号</view>
+            <image class="p_next" src="../../images/next.png"></image>
+            <view class="p_real_name">未设置</view>
+        </view>
+        <view class="line"></view>
+          <view class="p_name_class">
+            <view class="p_name_label">手机号</view>
+            <image class="p_next" src="../../images/next.png"></image>
+            <view class="p_real_name">未设置</view>
+        </view>
+         <view class="line"></view>
+          <view class="p_name_class">
+            <view class="p_name_label">图书管名称</view>
+            <image class="p_next" src="../../images/next.png"></image>
+            <view class="p_real_name">未设置</view>
+        </view>
+         <view class="line"></view>
+          <view class="p_name_class">
+            <view class="p_name_label">图书管理授权</view>
+            <image class="p_next" src="../../images/next.png"></image>
+            <view class="p_real_name">未设置</view>
+        </view>
+     </view>
+
+</view>

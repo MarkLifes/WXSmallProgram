@@ -1,0 +1,44 @@
+<view class="root">
+    
+    <scroll-view class="scrollView" scroll-y="true" style="height: 92vh">
+        <!--<view class="imageView">
+             <image class="image" src="{{data.imageUrl[0]}}" mode="aspectFill"></image>
+             
+        </view>-->
+         <view class="imageView">
+             <!--<image class="image" src="{{data.imageUrl[0]}}" mode="center"></image>-->
+              <swiper bindchange="listenSwiper" class="swiper" indicator-dots="true"
+                    autoplay="true" interval="3000" duration="800">
+                  <block wx:for="{{data.imageUrl}}">
+                    <swiper-item >
+                        <image src="{{item}}" bindtap="onPreview" class="imagesw" mode="aspectFill"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="thingsName">
+            物品名称：{{data.itemName}}
+        </view>
+        <view class="thingsTime">
+              {{"出租时长："+data.chargeDay+'天'}}
+        </view>
+        <view class="thingsDiposit">
+              押金：{{data.deposit + "元"}}
+        </view>
+        <view class="thingsRental">
+              租金：{{data.chargePrice +"元"}}
+        </view>
+        <view class="thingsWeiXin" >
+              微信：{{data.wechat}}
+        </view>
+        <view class="thingsContact" hidden="true" >
+              联系方式：{{data.phone}}
+        </view>
+         
+    </scroll-view>
+    <view class="payView">
+        <button class="rendalButton" bindtap="rentalClick" >租借</button>
+    </view>
+    
+    
+</view>

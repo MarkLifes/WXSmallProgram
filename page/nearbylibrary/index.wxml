@@ -1,0 +1,24 @@
+<!--page/one/index.wxml-->
+<view class="root">
+      <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" 
+        class="hlist" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+        <view  wx:key="item" wx:for="{{nearbylibrarylist}}">
+           <view id="{{item.shopOpenId}}" class="mylibrary_item_2" bindtap="onClickNearLibrary" >
+        
+                        <view class="mylibrary_left">
+                            <view class="mylibrary_text">
+                                <text class="mylibrary_title_2">{{item.name}}</text>
+                             
+                                <view class="footer">
+                                    <text class="description">{{ item.description}}</text>
+                                    <!--<text class="date">{{item.createTime}}
+                </text>-->
+                                </view>
+                            </view>
+                         
+                        </view>
+                    </view>
+        </view>
+    </scroll-view>
+
+</view>

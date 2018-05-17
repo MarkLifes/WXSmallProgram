@@ -1,0 +1,211 @@
+
+.image_layout{
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+    margin-left: 33rpx;
+}
+
+.picTextclass{
+    display: flex;
+    font-size: 30rpx;
+    width: 155rpx;
+    color: #333333;
+}
+
+.add_pic{
+    width: 155rpx;
+      font-size: 30rpx;
+      display: flex;
+      justify-content:flex-end;
+     color: #333333;
+}
+.normal{
+    display: flex;
+    width: 158px;
+    padding: 10rpx;
+    height: 158px;
+}
+
+.reverse{
+    display: flex;
+    width: 158px;
+    padding: 10rpx;
+    height: 158px;
+}
+.isbn_layout{
+    display: flex;
+}
+.shaoyishao{
+    display: flex;
+    width: max-content;
+    border-radius: 10rpx;
+    flex: 1;
+
+}
+
+
+.xd-view-section{
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+    margin-left: 33rpx;
+}
+.xd-input{
+    display: flex;
+    font-size: 30rpx;
+    padding-left: 5rpx;
+    height: 70rpx;
+    flex: 1;
+    align-items: center;
+    line-height: 28rpx;
+    border-color: #c2c2c2;
+    margin-left: 15rpx;
+    padding-top: 2rpx;
+    border-style: solid;
+    border-width: 2rpx;
+    border-radius: 5rpx;
+}
+/**
+   标签样式
+*/
+.xd-abs{
+    display: flex;
+    font-size: 30rpx;
+    width: 155rpx;
+    color: #333333;
+}
+.btn_submit{
+    margin-top: 100rpx;
+    width: 250rpx;
+    /*padding-top: 50rpx;
+    padding-bottom: 50rpx;*/
+    margin-bottom: 100rpx;
+}
+.saoma_image{
+    height: 60rpx;
+    display: flex;
+    width: 60rpx;
+    margin-right: 35rpx;
+    margin-left: 15rpx;
+}
+
+.danwei{
+    width: 60rpx;
+    font-size: 30rpx;
+    margin-left: 20rpx;
+    color: rgb(120, 120, 120);
+}
+.isbn_class{
+     width: 155rpx;
+      font-size: 30rpx;
+      display: flex;
+      justify-content:flex-end;
+     color: #333333;
+}
+.isbn_text{
+    font-size: 28rpx;
+    border-color: #c2c2c2;
+    margin-left: 15rpx;
+        height: 70rpx;
+    padding-top: 2rpx;
+    border-style: solid;
+    border-width: 2rpx;
+    flex: 1;
+    border-radius: 5rpx;
+}
+
+.xd-container{
+   display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:rgb(239, 239, 239);
+    height:100%;
+}
+
+
+.publish_content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:#FF11FF;
+    width:95%;
+    margin-top: 40rpx;
+    border-radius: 10rpx;
+
+}
+
+.formClass{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    height: 100%;
+    width: 95%;
+    background-color:rgb(253, 253, 253);
+       border-radius: 15rpx;
+}
+.item{
+    display: flex;
+    align-items: center;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    width:95vw;
+    border-bottom: 1rpx rgb(248, 248, 248) solid;
+    padding-top:25rpx;
+    padding-bottom: 25rpx;
+ 
+    /*background-color: #003300;*/
+
+}
+
+.bookNameClass{
+    font-size: 30rpx;
+    width: 180rpx;
+    margin-left: 20rpx;
+    color: rgb(120, 120, 120);
+    /*background-color: #FF11FF;*/
+}
+.inputNameClass{
+    display: flex;
+     font-size: 30rpx;
+    flex:1;
+}
+.inputNameClass2{
+    display: flex;
+     font-size: 30rpx;
+    flex:1;
+    color: rgb(207, 207, 207);
+}
+
+.p_next{
+    float:right;
+    width:40rpx;
+    height:40rpx;
+    margin-right: 20rpx;
+}
+
+.phcolor{
+    color: rgb(207, 207, 207);
+}
+
+.leftLayout{
+    display: flex;
+    width:500rpx;
+    height: 150rpx;
+}
+
+
+.image_a{
+
+   width: 150rpx;
+   height: 150rpx;
+}
+
+.image_b{
+   width: 150rpx;
+   height: 150rpx;
+   margin-left: 40rpx;
+}

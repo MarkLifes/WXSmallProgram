@@ -1,0 +1,12 @@
+.feedback_root{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color:#F8F8FF;
+    height:100%;
+}
+
+.list{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,45 @@
+<!--page/one/index.wxml-->
+<view class="page">
+    <view class="page-bottom">
+       <include src="../common-ui/menu.wxml"/>
+    </view>
+    <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? 'c-state1' : ''}}">
+        <view class="content" style="{{index==0?'display:flex':'display:none'}}">
+                 <include src="../dynamics/dongtai.wxml"/>
+                 <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+         <view class="content" style="{{index==1?'display:flex':'display:none'}}">
+             <include src="../nearbylibrary/index.wxml"/>
+              <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        <view class="content" style="{{index==2?'display:flex':'display:none'}}">
+               <include src="../mylibrary/index.wxml"/>
+                <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        <view class="content" style="{{index==3?'display:flex':'display:none'}}">
+                <include  src="../borrowedbooks/index.wxml"/>
+                <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        <view class="content" style="{{index==31?'display:flex':'display:none'}}">
+                <include src="../mylibrary/index.wxml"/>
+                <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        <view class="content" style="{{index==4?'display:flex':'display:none'}}">
+            <include src="../lendbooks/index.wxml"/>
+             <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+         <view class="content" style="{{index==41?'display:flex':'display:none'}}">
+                <include src="../mylibrary/index.wxml"/>
+                <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        <view class="content" style="{{index==5?'display:flex':'display:none'}}">
+            <include src="../about/index.wxml"/>
+             <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        <view class="content" style="{{index==6?'display:flex':'display:none'}}">
+            <include src="../exit/index.wxml"/>
+             <include src="../common-ui/bottom_bar.wxml"/>
+        </view>
+        
+    </view>
+</view>

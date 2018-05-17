@@ -1,0 +1,13 @@
+<view class="bottom_bar">
+    <image bindtap="openMenu" class="imgLeftMenu" src="../../images/btn.png"></image>
+    <view style="{{index==2&&!isEditing?'display:flex':'display:none'}}" class="edit_bar" bindtap="onEdit">
+      编辑
+    </view>
+    <view style="{{index==2&&isEditing?'display:flex':'display:none'}}"  class="edit_bar" bindtap="onSave">
+      保存
+    </view>
+    <view style="{{index==100?'display:flex':'display:none'}}"  class="edit_bar" bindtap="onSearchNearLibrary">
+      搜索
+    </view>
+    <image bindtap="onPublish" class="imgRightMenu" src="../../images/saoma.png"></image>
+</view>

@@ -1,0 +1,13 @@
+<!--page/feedback/feedbback.wxml-->
+<view class="feedback_root">
+
+    <scroll-view scroll-y="true" style="height:100%;" 
+         bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+        <view  wx:for="{{feedback_list}}">
+            <view class="mylibrary_item" bindtap="onClickItem" >
+                  反馈信息
+            </view>
+        </view>
+    </scroll-view>
+
+</view>

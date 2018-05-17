@@ -1,0 +1,64 @@
+<view class="root">
+    
+    <scroll-view class="scrollView" scroll-y="true" style="height: 92vh">
+        <view class="imageView">
+             <!--<image class="image" src="{{data.imageUrl[0]}}" mode="center"></image>-->
+              <swiper   class="swiper" indicator-dots="true"
+                    autoplay="true" interval="3000" duration="800" bindchange="listenSwiper">
+                  <block wx:for="{{data.imageUrl}}">
+                    <swiper-item  bindtap="onPreview" >
+                        <image src="{{item}}" class="imagesw" mode="aspectFit"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="thingsName">
+            物品名称：{{data.itemName}}
+        </view>
+      
+        <view class="thingsTime">
+              <view class="thingState_label black_33">物品状态：</view>
+              <view  class="thingState">{{ data.state == 0 ?'上架':'下架'}}</view>
+              <!--<view bindtap="rentalClick" class="updateText">修改</view>-->
+        </view>
+
+          <view class="thingsTime">
+              <view class="thingState_label black_33">出租时长：</view>
+              <view  class="thingState black_99">   {{data.chargeDay+'天'}}</view>
+            
+              <!--<view bindtap="rentalClick" class="updateText">修改</view>-->
+        </view>
+         <view class="thingsTime">
+              <view class="thingState_label black_33">押金：</view>
+              <view  class="thingState black_99">  {{data.deposit+"元"}}</view>
+            
+              <!--<view bindtap="rentalClick" class="updateText">修改</view>-->
+        </view>
+       
+        <view class="thingsTime">
+              <view class="thingState_label black_33">租金：</view>
+              <view  class="thingState black_99"> {{data.chargePrice+"元"}}</view>
+            
+              <!--<view bindtap="rentalClick" class="updateText">修改</view>-->
+        </view>
+         <view class="thingsTime">
+              <view class="thingState_label black_33">微信：</view>
+              <view  class="thingState black_99"> {{data.wechat}}</view>
+            
+              <!--<view bindtap="rentalClick" class="updateText">修改</view>-->
+        </view>
+        <view class="thingsTime" hidden="true">
+              <view class="thingState_label black_33">电话：</view>
+              <view  class="thingState black_99"> {{data.phone}}</view>
+            
+              <!--<view bindtap="rentalClick" class="updateText">修改</view>-->
+        </view>
+    
+         
+    </scroll-view>
+    <view class="payView" hidden="true">
+        <button class="rendalButton" bindtap="rentalClick" >修改物品状态</button>
+    </view>
+    
+    
+</view>

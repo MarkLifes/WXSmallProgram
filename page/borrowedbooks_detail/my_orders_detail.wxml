@@ -1,0 +1,73 @@
+<view class="root">
+    
+    <scroll-view class="scrollView" scroll-y="true" style="height: 100vh">
+        <view class="common">
+              <view class="order_number_lable black_33">订单编号：</view>
+              <view class="order_number"></view>
+              <view  class="order_state">{{datas.order.out_trade_no
+}}</view>
+        </view>
+       <view class="thingName">
+              <view class="things_yajin black_33">物品名称：</view>
+              <view class="yajin_money black_font">{{datas.item.itemName}}</view>
+        </view>
+        <view hidden="true" class="commonImage">
+             <image class="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489216474073&di=da5eff4a50b01f6bf75aa4af2fdced27&imgtype=0&src=http%3A%2F%2Fwww.kfzimg.com%2FG03%2FM00%2F8F%2FE3%2FpYYBAFUa8p6Ab_MtAACRI_kGleQ855_b.jpg" mode="aspectFill"></image>
+             <view class="description">
+                  Android开发与实践这本书，适合中我基础不分，通过项目来强化自己项目的经验
+             </view>
+        </view>
+        <view class="common">
+              <view class="things_yajin black_33">{{select_one?"出借人：":"租借人"}}</view>
+              <view class="yajin_money black_font">{{
+select_one?datas.owner.nickName:datas.customer.nickName
+}}</view>
+        </view>
+         <view class="common">
+              <view class="things_yajin black_33">{{select_one?"出借人微信：":"租借人微信"}}</view>
+              <view class="yajin_money black_font">{{select_one?datas.owner.wechat:datas.customer.wechat}}</view>
+        </view>
+         <view class="common" hidden="true">
+              <view class="things_yajin black_33">{{select_one?"出借人电话":"租借人电话"}}</view>
+              <view class="yajin_money black_font">{{datas.owner.phone}}</view>
+        </view>
+     
+        <view class="common">
+              <view class="things_yajin black_33">剩余时长：</view>
+              <view class="yajin_money black_font">{{datas.order.leftDays}}</view>
+        </view>
+        
+        <view class="common">
+              <view class="things_yajin black_33">商品押金：</view>
+              <view class="yajin_money">{{datas.item.deposit+"元"}}</view>
+        </view>
+      
+
+        <view class="common">
+              <view class="things_zujin black_33">商品租金：</view>
+              <view class="zujin_money">{{datas.item.chargePrice+"元"}}</view>
+        </view>
+
+        <view class="common">
+              <view class="things_yajin black_33">{{select_one?'退回金额':'实际收入'}}</view>
+              <view class="yajin_money">{{select_one?datas.order.refunt+"元":datas.order.income+"元"}}</view>
+        </view>
+         <view hidden="true" class="realPay">
+              <view class="real_money_lable">实付款：</view>
+              <view class="real_money">¥60</view>
+        </view>
+        <view class="confirm_order_date">
+              <view class="order_date_label">下单时间：</view>
+              <view class="order_date">{{datas.order.createTime
+
+}}</view>
+        </view>
+       
+        <view hidden="{{datas.order.status!=0?true:false}}" class="cancelOrder" bindtap="cancelOrder">
+           <button >取消订单</button>
+        </view>
+    </scroll-view>
+
+    
+    
+</view>

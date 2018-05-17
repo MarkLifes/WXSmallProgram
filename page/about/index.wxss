@@ -1,0 +1,27 @@
+/* page/dynamics/index.wxss */
+
+.about_root{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.currentVersion{
+    background-color: #ffeeff;
+    padding: 30rpx;
+    margin: 12rpx;
+    border-radius: 15rpx;
+
+
+}
+
+.IWantFeedBack{
+    margin: 12rpx;
+    background-color: #ffeeff;
+    padding: 30rpx;
+    border-radius: 15rpx;
+}
+
+

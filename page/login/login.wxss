@@ -1,0 +1,19 @@
+/* page/exit/login.wxss */
+.login_root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.loginBtn{
+    text-align: center;
+    width: 200rpx;
+    height: 200rpx;
+    margin-top: 30vh;
+}
+
+.welcome_text{
+    margin-top: 20vh;
+    font-size: 60rpx;
+    color:#333333;
+}

@@ -1,0 +1,11 @@
+<view class="root-view">
+    <view class="group_near_things" style="flex-direction:column">
+
+          <button class="btn_near_things" bindtap="near_things_event">附近物品</button>
+          <view class="group_near_things_two">
+               <button class="btn_my_orders" bindtap="my_orders_event">我的订单</button>
+               <button class="btn_my_things" bindtap="my_things_event">我的物品</button>
+          </view>
+     
+   </view>
+</view>

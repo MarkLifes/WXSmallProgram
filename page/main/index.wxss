@@ -1,0 +1,51 @@
+/* page/dynamics/index.wxss */
+@import "../borrowedbooks/index.wxss";
+@import "../mylibrary/index.wxss";
+@import "../about/index.wxss";
+@import "../nearbylibrary/index.wxss";
+.header{
+    display: flex;
+    flex-direction: column;
+    background-color: #295F93;
+    padding-top: 80rpx;
+    height: 360rpx;
+    width: 100%;
+}
+
+.header_img{
+  width: 170rpx;
+  height: 170rpx;
+  float: left;
+  margin-left: 30rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+  background-color: #D1E5E6;
+}
+
+.rightClass{
+    float: left;
+    margin-left: 10rpx;
+    margin-top: 15rpx;
+
+}
+.nickNameClass{
+    font-size: 40rpx;
+    color: floralwhite;
+
+}
+.edithintClass{
+    margin-top: 15rpx;
+    font-size: 30rpx;
+    color: #ADD8E6;
+}
+.header_one{
+    width: 100%;
+}
+.everydaysentence{
+    color: #EEF0F2;
+    margin-top: 120rpx;
+    font-size: 25rpx;
+    padding-left: 20rpx;
+    
+
+}

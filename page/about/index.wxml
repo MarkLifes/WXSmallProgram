@@ -1,0 +1,12 @@
+<!--page/one/index.wxml-->
+<view class="root">
+
+   <view class="about_root">
+        <view class="currentVersion" >
+            当前版本:1.0.1
+        </view>
+        <view class="IWantFeedBack" bindtap="onFeedbackList">
+            反馈
+        </view>
+    </view>
+</view>

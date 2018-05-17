@@ -1,0 +1,94 @@
+<!--page/one/index.wxml-->
+<view class="root">
+    <view class="show">
+        <scroll-view class="scrollview" scroll-y="true" style="height: 100%" bindscrolltolower="bindDownLoad2" bindscroll="scroll">
+                    <view class="wrap_item" wx:key="item" wx:for="{{lend_list}}" >
+                        
+                        <view  id="{{item.out_trade_no}}" class="one" bindtap="clickLendItem">
+                            <view class="two">
+                                <!--<view class="three"></view>-->
+                                <image class="image2" src="{{item.imageUrl[0]}}" mode="aspectFill"></image>
+                            </view>      
+                            <view class="four">
+                                <view class="five">
+                                    {{""+item.itemName}}
+                                </view>
+                                <view class="six">
+                                    <!--{{"剩余归还天数："+"20"+""}}-->
+                                </view>
+                                <view class="six">
+                                {{"剩余归还天数："+item.leftDays}}
+                                </view>
+                                <view class="six">
+                                    <!--{{"剩余归还天数："+"20"+""}}-->
+                                </view>
+                                <view class="seven">
+                                    <view class="money">
+                                    {{"租金：¥"+item.chargePrice
+        }}
+                                    </view>
+                                <view class="state" >
+                    
+                                        
+                                            <view hidden="{{item.status ==0?false:true}}" class="confirmClass" bindtap="confirmAccept"> 
+                                                <button data-index="{{index}}" data-statu="open_accept_qrcode"  id="{{item.out_trade_no}}"  class="stateBtn" catchtap="confirmArrived">收款码</button>
+                                            </view>
+        
+                                            <view  id="{{item}}" hidden="{{item.status == 1?false:true}}" class="applyBack">
+                                                <button data-statu="open" id="{{item.out_trade_no}}" class="stateBtn" catchtap="confirm_back">确认归还</button>
+                                            </view>
+
+                                            <view hidden="{{item.status == 2?false:true}}" class="finished">
+                                                已归还
+                                            </view>
+                                    </view>
+                                </view>
+
+                            </view> 
+                        </view> 
+                
+                        
+                    </view>
+            </scroll-view>
+
+            <view class="drawer_screen" bindtap="accept_qrcode" data-statu="close" wx:if="{{acceptQrStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="qr_drawer_box" wx:if="{{acceptQrStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">押金码</view> 
+            <view class="qr_drawer_content"> 
+
+                <view class="qr_content"><image class="accept_image" src="{{accept_qrcode_url}}"></image> </view>
+              <view class="tiproot">
+            
+            </view>
+            </view> 
+          
+
+            <view data-weixin="{{weixin_no}}" class="btn_ok" bindtap="close_image" data-statu="close">确定</view> 
+        </view>
+
+           <view animation="{{animationData}}" class="drawer_box" wx:if="{{showQRcodeModelStauts}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">提示</view> 
+            <view class="drawer_content"> 
+
+                <view class="paytip">您可以点击确认按钮，将押金码出示给对方扫描，然后开始您的订单计费</view>
+              <view class="tiproot">
+              <checkbox-group bindchange="showQRcodeChange">
+                <checkbox class="checkbox_class" value="不再提示" checked="{{item.checked}}"/>
+                
+                <view class="noTip">{{"不再提示"}}</view>
+              </checkbox-group>
+            </view>
+            </view> 
+          
+
+            <view class="btn_ok" bindtap="lend_ok" data-statu="close">确定</view> 
+        </view>
+
+    </view>
+</view>

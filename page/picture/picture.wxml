@@ -1,0 +1,9 @@
+<view class="picutre_root">
+    
+
+    <image bindtap="onLeft" class="image_a" src="{{leftPicture}}"></image>
+
+    <image bindtap="onRight" class="image_b" src="{{rightPicture}}"></image>
+
+    <button size="default" class="save_class"  hover-class="xd-subBtn-hover">保存</button>
+</view>

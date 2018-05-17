@@ -1,0 +1,47 @@
+<view class="page-content">
+
+             <view class="header" catchtap="toPersonalPage">
+                 <view class="header_one">
+                    <image class="header_img" src="{{headerUrl}}" mode="aspectFill"></image>
+
+                    <view class="rightClass">
+                        <view class="nickNameClass">
+                            {{nick_name}}
+                        </view>
+                        <view class="edithintClass">
+                            点击编辑个人资料
+                        </view>
+                    </view>
+                 </view>
+                 <view hidden="true" class="everydaysentence">
+                     人生犹如一本书，愚蠢者草草翻过，聪明者细细阅读。为何如此正因为他们只能读一次  ——保罗
+                 </view>
+            </view> 
+            <view hidden="true"  class="{{index == 0?'press_class':'normal_class'}}">
+                <view data-index="{{0}}" catchtap="onMenuClick" class="navigator_class" hover-class="navigator-hover">动态</view>
+            </view>
+
+            <view  class="{{index == 1?'press_class':'normal_class'}}">
+                <view data-index="{{1}}" catchtap="onMenuClick" class="navigator_class" hover-class="navigator-hover">附近图书管</view>
+            </view>
+
+            <view  class="{{index == 2?'press_class':'normal_class'}}">
+                <view data-index="{{2}}" catchtap="onMenuClick" class="navigator_class"  hover-class="navigator-hover">我的图书管</view>
+            </view>
+
+            <view  class="{{((index == 3)||(index == 31))?'press_class':'normal_class'}}">
+                <view data-index="{{3}}" catchtap="onMenuClick" class="navigator_class"  hover-class="navigator-hover">借入图书</view>
+            </view>
+
+            <view  class="{{((index == 4)||(index == 41))?'press_class':'normal_class'}}">
+                <view data-index="{{4}}" catchtap="onMenuClick"  class="navigator_class"  hover-class="navigator-hover">借出图书</view>
+            </view>
+            <view  class="{{index == 5?'press_class':'normal_class'}}">
+                <view data-index="{{5}}" catchtap="onMenuClick" class="navigator_class"  hover-class="navigator-hover">关于我们</view>
+            </view>
+
+            <view  class="{{index == 6?'press_class':'normal_class'}}">
+                <view data-index="{{6}}" catchtap="onMenuClick" class="navigator_class"  hover-class="navigator-hover">退出登陆</view>
+            </view>
+
+</view>

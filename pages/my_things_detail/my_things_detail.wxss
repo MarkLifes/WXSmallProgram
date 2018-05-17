@@ -1,0 +1,65 @@
+.thingState{
+    display: flex;
+    color: #ff0000;
+    margin-top: 8rpx;
+}
+.thingState_label{
+    display: flex;
+    margin-top: 8rpx;
+}
+.black_33{
+    color: #333333;
+}
+.black_99{
+    color: #999999;
+}
+.updateText{
+    color: #005757;
+    font-size: 30rpx;
+    border-bottom-color: #005757;
+    margin-left: 15rpx;
+    padding-top: 2rpx;
+    border-bottom-style: solid;
+    border-bottom-width: 2rpx;
+
+}
+.imageView{
+    width:100vw;
+    height: 600rpx;
+    margin-top: 8rpx;
+}
+.swiper{
+      width:100%;
+     height:600rpx;
+}
+.imagesw{
+    width:100%;
+    height:600rpx;
+}
+.thingsName{
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+.Time{
+     display: flex;
+    flex-direction: row;
+    margin-top: 15rpx;
+    color: #666666;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+}
+.thingsTime{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8rpx;
+    color: #666666;
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    
+}
+.scrollView{
+ 
+}
+
+

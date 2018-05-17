@@ -1,0 +1,82 @@
+
+<view class="container">
+    <view style="display:none">
+    <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad"></image>x
+    </view>
+    <scroll-view hidden="{{isHiddenScrollView}}" scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+    <view style="width:100%">
+        <view class="img_item">
+            <view wx:for="{{col1}}" wx:key="id">
+                <view class="leftclass">
+                    <image id="{{item.itemId}}" src="{{item.pic}}" style="width:100%;height:450rpx" bindtap="bindViewTapLeft"></image>
+                    <view class="thingsName">{{item.itemName}}</view>
+                    <view class="seven">
+                                <view class="money">
+                                {{"租金：¥"+item.chargePrice}}
+                                </view>
+                                <view class="state">
+                                        {{item.distance+"km"}}
+                                </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="img_item">
+            <view wx:for="{{col2}}" wx:key="id">
+               <view class="rightclass">
+                    <image  id="{{item.itemId}}" src="{{item.pic}}" style="width:100%;height:450rpx" bindtap="bindViewTapRight"></image>
+                    <view class="thingsName">{{item.itemName}}</view>
+                    <view class="seven">
+                                <view class="money">
+                                {{"租金：¥"+item.chargePrice}}
+                                </view>
+                                <view class="state">
+                                        {{item.distance+"km"}}
+                                </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+      
+    </scroll-view>
+    <view hidden="{{!isHiddenScrollView}}" class="placeroot">
+        <image class="placeHolder" src="./empty.png"></image>
+        <view class="placeText">附近没有书籍</view>
+    </view>
+    <view class="body-view">
+     <!--<image class="placeHolder" src="./empty.png"></image>
+        <view class="placeText">附近没有书籍</view>-->
+            <loading hidden="{{hidden}}" bindchange="loadingChange">
+                加载中...
+            </loading>
+    </view>
+
+        <view class="drawer_screen" bindtap="back_qrcode" data-statu="close" wx:if="{{backQrStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="qr_drawer_box" wx:if="{{backQrStatus}}"> 
+        
+            <!--drawer content-->
+            <!--<view class="drawer_title">付款码</view> -->
+            <view class="qr_drawer_content"> 
+
+                <view class="qr_content">
+                   <swiper  class="swiper" indicator-dots="true"
+                         bindchange="listenSwiper">
+                        <block wx:for="{{urls}}">
+                            <swiper-item  bindtap="onPreview" >
+                                <image src="{{item}}" class="imagesw" mode="aspectFill"/>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                 </view>
+              <view class="tiproot">
+            
+            </view>
+            </view> 
+          
+
+            <view data-weixin="{{weixin_no}}" class="btn_ok" bindtap="close_guide" data-statu="close">关闭</view> 
+        </view>
+</view>

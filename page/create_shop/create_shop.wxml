@@ -1,0 +1,27 @@
+<view class="xd-container">
+   
+        <form class="formClass" bindsubmit="bindSaveTap">
+
+            <view class="item">
+               <text class="bookNameClass">名称</text>
+               <input class="inputNameClass" placeholder-class="phcolor" name="shopName"  type="text" maxlength="10"  placeholder="图书馆名称" value="{{userInfo.user_name}}"/>
+            </view>
+            <view class="item">
+               <text class="bookNameClass">图片</text>
+               <view class="leftLayout">
+                <image bindtap="onLeft" class="image_a" src="{{picture1}}"></image>
+               </view>
+               
+            </view>
+            
+             <view class="item">
+               <text class="bookNameClass">描述</text>
+              <input name="description" placeholder-class="phcolor" class="inputNameClass"  placeholder="请简单描述一下您的店铺"  value="{{description}}"/>
+                 <text class="danwei"> </text>
+            </view>
+           
+
+             
+        <button size="default" class="btn_submit" formType="submit" hover-class="xd-subBtn-hover">创建</button>
+        </form>
+</view>

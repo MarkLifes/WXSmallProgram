@@ -1,0 +1,54 @@
+<view class="xd-container">
+   
+        <form class="formClass" bindsubmit="bindSaveTap">
+
+            
+              <picker hidden="{{isUpdate==0}}" class="pickeLayout" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">  
+                  <view class="item"  hidden="{{isUpdate==0}}">  
+                    <text class="bookNameClass">图书馆</text>
+                    <text class="inputNameClass">{{shopName}}</text>  
+                  </view>  
+              </picker> 
+           
+           <view class="item">
+               <text class="bookNameClass">名称</text>
+               <input class="inputNameClass" placeholder-class="phcolor" name="itemName"  type="text" maxlength="10"  placeholder="图书名称" value="{{bookBean.itemName}}"/>
+            </view>
+            <view class="item">
+               <text class="bookNameClass">图片</text>
+               <view class="leftLayout">
+                <image bindtap="onLeft" class="image_a" src="{{picture1}}"></image>
+                <image bindtap="onRight" class="image_b" src="{{picture2}}"></image>
+               </view>
+               
+            </view>
+             <view class="item">
+               <text class="bookNameClass">出租时长</text>
+               <input name="chargeDay" placeholder-class="phcolor" class="inputNameClass" placeholder="填写出租时长" value="{{bookBean.chargeDay}}"/>
+                <text class="danwei"> 天</text>
+            </view>
+            <view class="item">
+               <text class="bookNameClass">押金</text>
+               <input name="deposit" placeholder-class="phcolor" type="number" maxlength="5" placeholder="不能低于5元" class="inputNameClass" value="{{bookBean.deposit}}"/>
+                <text class="danwei"> 元</text>
+            </view>
+             <view class="item">
+               <text class="bookNameClass">租金</text>
+              <input name="chargePrice" placeholder-class="phcolor" type="number"  maxlength="5" placeholder="不能低于2元" class="inputNameClass" value="{{bookBean.chargePrice}}"/>
+                    <text class="danwei"> 元</text>
+            </view>
+             <view class="item">
+               <text class="bookNameClass">微信</text>
+              <input name="weixin" placeholder-class="phcolor" class="inputNameClass"  placeholder="请留个微信"  value="{{bookBean.wechat}}"/>
+                 <text class="danwei"> </text>
+            </view>
+             <view class="item">
+               <text class="bookNameClass">联系方式</text>
+                <input name="phone" placeholder-class="phcolor" class="inputNameClass" placeholder="选择填写" value="{{bookBean.phone}}"/>
+                 <text class="danwei"> </text>
+            </view>          
+             
+        <button size="default" class="btn_submit" formType="submit" hover-class="xd-subBtn-hover">{{isUpdate==0?'保存':'发布'}}</button>
+        </form>
+      
+</view>

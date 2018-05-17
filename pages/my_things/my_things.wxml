@@ -1,0 +1,29 @@
+<view class="container">
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+        class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+        <view  wx:for="{{list}}">
+            <view id="{{item.itemId}}" class="item" bindtap="onClickItem" >
+            <image class="image" src="{{item.imageUrl[0]}}" mode="aspectFill"></image>
+
+            <view class="text">
+                <text class="title">{{item.itemName}}</text>
+                <text class="description">{{item.itemDescription
+}}</text>
+                 <view class="footer">
+                    <text class="state">{{ item.state == 0 ?'上架':'下架'}}</text>
+                    <text class="date">{{item.createTime}}
+</text>
+                </view>
+            </view>
+            </view>
+        </view>
+         
+    </scroll-view>
+    <view hidden="true" class="add_thing" bindtap="onAddThingsClick">添加物品</view>
+    <view class="body-view">
+        <loading hidden="{{hidden}}" bindchange="loadingChange">
+            加载中...
+        </loading>
+    </view>
+   
+</view>

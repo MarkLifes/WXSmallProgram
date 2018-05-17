@@ -1,0 +1,54 @@
+<!--page/one/index.wxml-->
+<view class="root">
+
+<view class="{{isLibrary?'hidden':'showbook'}}">
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" 
+        class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+        <view wx:key="item" wx:for="{{main_booklist}}">
+            <view id="{{item.itemId}}" class="mylibrary_item" bindtap="onClickItem" >
+                <image class="mylibrary_image" src="{{item.imageUrl[0]}}" mode="aspectFit"></image>
+                <view class="mylibrary_left">
+                    <view class="mybook_text" hidden="{{isEditing?true:false}}" >
+                        <text class="mylibrary_title">{{item.itemName}}</text>
+                        <text class="mylibrary_description">{{item.itemDescription
+        }}</text>
+                        <view class="footer">
+                            <text class="state">{{ item.state == 0 ?'上架':'下架'}}</text>
+                            <text class="date">{{item.createTime}}
+        </text>
+                        </view>
+                    </view>
+                    <view style="{{isEditing?'display:flex':'display:none'}}"  class="rightBar">
+                        <view id="{{index}}" class="mylibrary_update" catchtap="toUpdateBook">修改</view>
+                        <view id="{{item.itemId}}" class="mylibrary_delete" catchtap="toDeleteBook">删除</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+         
+    </scroll-view>
+  </view>
+  <view class="{{isLibrary?'show':'hidden'}}">
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" 
+                class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+                <view wx:key="item" wx:for="{{mylibrary_list}}">
+                    <view id="{{item.shopOpenId}}" class="mylibrary_item_2" bindtap="onClickLibrary" >
+        
+                        <view class="mylibrary_left">
+                            <view class="mylibrary_text">
+                                <text class="mylibrary_title_2">{{item.name}}</text>
+                             
+                                <view class="footer">
+                                    <text class="description">{{ item.description}}</text>
+                                    <!--<text class="date">{{item.createTime}}
+                </text>-->
+                                </view>
+                            </view>
+                         
+                        </view>
+                    </view>
+                </view>
+                
+            </scroll-view>
+    </view>
+</view>

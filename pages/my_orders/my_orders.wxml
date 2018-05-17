@@ -1,0 +1,274 @@
+
+ <view class="root">
+  <view class="nav">
+    <view class="{{selected?'leftNavSelected':'leftNav'}}" bindtap="selected">
+       借入书籍
+    </view>
+    <view class="{{selected1?'rightNavSelected':'rightNav'}}" bindtap="selected1">
+       借出书籍
+       </view>
+  </view>
+  <view class="{{selected?'show':'hidden'}}">
+    <scroll-view class="scrollview" scroll-y="true" style="height: 100vh" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+            <view class="wrap_item" wx:for="{{borrowlist}}" >
+                
+                <view id="{{item.out_trade_no}}" class="one" bindtap="clickItem">
+                    <view class="two">
+                        <!--<view class="three"></view>-->
+                        <image  class="image" src="{{item.imageUrl[0]}}" mode="aspectFill"></image>
+                    </view>      
+                    <view class="four">
+                        <view class="five">
+                            {{""+item.itemName}}
+                        </view>
+                        <view class="six">
+                            <!--{{"剩余归还天数："+"20"+""}}-->
+                        </view>
+                    
+                        <view class="six">
+                             {{item.status > 0?"剩余归还天数：" + item.leftDays:""}}
+                        </view>
+                        <view class="six">
+                            <!--{{"剩余归还天数："+"20"+""}}-->
+                        </view>
+                        <view class="seven">
+                            <view class="money">
+                                 {{"租金：¥"+item.chargePrice}}
+                            </view>
+                                 <view class="state" >
+            
+                             
+                                     <view hidden="{{ item.status  == 0 ?false:true}}" class="confirmClass" bindtap="confirmAccept"> 
+                                     <image data-statu="open" data-index="{{index}}" catchtap="weixinTap" class="dianhua" src="./weixin.png"></image>
+                                         <image hidden="true" data-index="{{index}}" catchtap="callTap" class="dianhua" src="./dianhua.png"></image>
+                                         <button  data-statu="open" data-index="{{index}}" class="stateBtn" catchtap="powerDrawer">确认收到</button>
+                                     </view>
+
+                                     <view  id="{{item}}" hidden="{{item.status == 1?false:true}}" class="applyBack">
+                                         <button data-index="{{index}}" data-statu="open" id="{{item.out_trade_no}}" class="stateBtn" catchtap="apply_back">申请归还</button>
+                                    </view>
+
+                                        <view hidden="{{item.status == 3?false:true}}" class="finished">
+                                         等待出借人确认
+                                       </view>
+
+                                     <view hidden="{{item.status == 2?false:true}}" class="finished">
+                                         已归还
+                                       </view>
+                            </view>
+                           
+                        </view>
+
+                    </view> 
+                </view> 
+        
+                
+            </view>
+    </scroll-view>
+  </view>
+<view class="{{selected1?'show':'hidden'}}">
+    <scroll-view class="scrollview" scroll-y="true" style="height: 100vh" bindscrolltolower="bindDownLoad2" bindscroll="scroll">
+            <view class="wrap_item" wx:for="{{lendlist}}" >
+                
+                <view  id="{{item.out_trade_no}}" class="one" bindtap="clickItem">
+                    <view class="two">
+                        <!--<view class="three"></view>-->
+                        <image class="image" src="{{item.imageUrl[0]}}" mode="aspectFill"></image>
+                    </view>      
+                    <view class="four">
+                        <view class="five">
+                            {{""+item.itemName}}
+                        </view>
+                        <view class="six">
+                            <!--{{"剩余归还天数："+"20"+""}}-->
+                        </view>
+                        <view class="six">
+                          {{"剩余归还天数："+item.leftDays}}
+                        </view>
+                        <view class="six">
+                            <!--{{"剩余归还天数："+"20"+""}}-->
+                        </view>
+                        <view class="seven">
+                            <view class="money">
+                              {{"租金：¥"+item.chargePrice
+}}
+                            </view>
+                           <view class="state" >
+            
+                                  
+                                     <view hidden="{{item.status ==0?false:true}}" class="confirmClass" bindtap="confirmAccept"> 
+                                         <button data-index="{{index}}" data-statu="open"  id="{{item.out_trade_no}}"  class="stateBtn" catchtap="confirm_accept">押金码</button>
+                                     </view>
+ 
+                                     <view  id="{{item}}" hidden="{{item.status == 1?false:true}}" class="applyBack">
+                                         <button data-statu="open" id="{{item.out_trade_no}}" class="stateBtn" catchtap="confirm_back">确认归还</button>
+                                    </view>
+
+                                     <view hidden="{{item.status == 2?false:true}}" class="finished">
+                                         已归还
+                                       </view>
+                            </view>
+                        </view>
+
+                    </view> 
+                </view> 
+        
+                
+            </view>
+    </scroll-view>
+</view>
+<!--button-->
+<!--<view class="btn" bindtap="powerDrawer" data-statu="open">button</view> -->
+  
+<!--mask-->
+        <view class="drawer_screen" bindtap="confirm_shaoyishao_dialog" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">提示</view> 
+            <view class="drawer_content"> 
+
+                <view class="paytip">您可以点击确定按钮，扫描对方订单中的二维码完成确认收货</view>
+              <view class="tiproot">
+              <checkbox-group bindchange="checkboxChange">
+                <checkbox class="checkbox_class" value="不再提示" checked="{{item.checked}}"/>
+                
+                <view class="noTip">{{"不再提示"}}</view>
+              </checkbox-group>
+            </view>
+            </view> 
+          
+
+            <view class="btn_ok" bindtap="confirm_shaoyishao_dialog" data-statu="close">确定</view> 
+        </view>
+
+          <view class="drawer_screen" bindtap="confirm_accept_dialog" data-statu="close" wx:if="{{showQRcodeModelStauts}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_box" wx:if="{{showQRcodeModelStauts}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">提示</view> 
+            <view class="drawer_content"> 
+
+                <view class="paytip">您可以点击确认按钮，将押金码出示给对方扫描，然后开始您的订单计费</view>
+              <view class="tiproot">
+              <checkbox-group bindchange="showQRcodeChange">
+                <checkbox class="checkbox_class" value="不再提示" checked="{{item.checked}}"/>
+                
+                <view class="noTip">{{"不再提示"}}</view>
+              </checkbox-group>
+            </view>
+            </view> 
+          
+
+            <view class="btn_ok" bindtap="confirm_accept_dialog" data-statu="close">确定</view> 
+        </view>
+
+        <view class="drawer_screen" bindtap="confirm_back" data-statu="close" wx:if="{{confirmBackStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_box" wx:if="{{confirmBackStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">提示</view> 
+            <view class="drawer_content"> 
+
+                <view class="paytip">您可以点击确定按钮，扫描对方订单中的二维码完成订单交易</view>
+              <view class="tiproot">
+              <checkbox-group bindchange="confirmBackChange">
+                <checkbox class="checkbox_class" value="不再提示" checked="{{item.checked}}"/>
+                
+                <view class="noTip">{{"不再提示"}}</view>
+              </checkbox-group>
+            </view>
+            </view> 
+          
+
+            <view class="btn_ok" bindtap="confirm_back" data-statu="close">确定</view> 
+        </view>
+
+          <view class="drawer_screen" bindtap="apply_back_dialog" data-statu="close" wx:if="{{applyBackStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_box" wx:if="{{applyBackStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">提示</view> 
+            <view class="drawer_content"> 
+
+                <view class="paytip">您可以点击确定按钮，将二维码出示给对方扫描，完成物品归还</view>
+              <view class="tiproot">
+              <checkbox-group bindchange="applyBackChange">
+                <checkbox class="checkbox_class" value="不再提示" checked="{{item.checked}}"/>
+                
+                <view class="noTip">{{"不再提示"}}</view>
+              </checkbox-group>
+            </view>
+            </view> 
+          
+
+            <view class="btn_ok" bindtap="apply_back_dialog" data-statu="close">确定</view> 
+        </view>
+
+       <view class="drawer_screen" bindtap="weixinTap" data-statu="close" wx:if="{{weixinStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_box" wx:if="{{weixinStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">提示</view> 
+            <view class="drawer_content"> 
+
+                <view class="paytip"><text>{{'快去添加她的微信联系吧：'}}</text> <text selectable="true" >{{weixin_no}}</text> </view>
+              <view class="tiproot">
+            
+            </view>
+            </view> 
+          
+
+            <view data-weixin="{{weixin_no}}" class="btn_ok" bindtap="weixin_close" data-statu="close">复制到剪切板</view> 
+        </view>
+
+
+       <view class="drawer_screen" bindtap="accept_qrcode" data-statu="close" wx:if="{{acceptQrStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="qr_drawer_box" wx:if="{{acceptQrStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">押金码</view> 
+            <view class="qr_drawer_content"> 
+
+                <view class="qr_content"><image class="accept_image" src="{{accept_qrcode_url}}"></image> </view>
+              <view class="tiproot">
+            
+            </view>
+            </view> 
+          
+
+            <view data-weixin="{{weixin_no}}" class="btn_ok" bindtap="close_accept_qrcode" data-statu="close">确定</view> 
+        </view>
+
+        <view class="drawer_screen" bindtap="back_qrcode" data-statu="close" wx:if="{{backQrStatus}}"></view> 
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="qr_drawer_box" wx:if="{{backQrStatus}}"> 
+        
+            <!--drawer content-->
+            <view class="drawer_title">付款码</view> 
+            <view class="qr_drawer_content"> 
+
+                <view class="qr_content"><image class="accept_image" src="{{back_qrcode_url}}"></image> </view>
+              <view class="tiproot">
+            
+            </view>
+            </view> 
+          
+
+            <view data-weixin="{{weixin_no}}" class="btn_ok" bindtap="close_back_qrcode" data-statu="close">确定</view> 
+        </view>
+        
+</view>

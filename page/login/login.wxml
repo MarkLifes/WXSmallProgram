@@ -1,0 +1,4 @@
+<view class="login_root">
+    <view class="welcome_text">欢迎使用物享</view>
+    <image bindtap="onClickLogin" class="loginBtn" src="./login.png" ></image>
+</view>

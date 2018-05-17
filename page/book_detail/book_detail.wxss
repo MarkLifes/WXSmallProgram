@@ -1,0 +1,123 @@
+/* pages/near_things_detail/near_things_detail.wxss */
+.bd_root{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+  height: 100%;
+  background: #FFFFFF;
+}
+.bookdetail_sv_92{
+    height: 92vh;
+      background: #FFFFFF;
+}
+
+.bookdetail_sv{
+    height: 100vh;
+      background: #FFFFFF;
+}
+
+.imageView{
+    width:100vw;
+    height: 600rpx;
+    margin-top: 8rpx;
+}
+.swiper{
+      width:100%;
+     height:600rpx;
+}
+.imagesw{
+    width:100%;
+    height:600rpx;
+}
+.image{
+    width:100%;
+    height:100%;
+}
+/*名称*/
+.thingsName{
+    font-size: 35rpx;
+    width: fit-content;
+    padding-top: 15rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    color: #333333;
+    
+}
+/*描述*/
+.thingsDesciption{
+    width: fit-content;
+    font-size: 30rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    line-height: 40rpx;
+    color: #543054;
+}
+/*出租时间*/
+.thingsTime{
+    font-size: 30rpx;
+    width: fit-content;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    color: #666666;
+}
+/*押金*/
+.thingsDiposit{
+    font-size: 30rpx;
+    width: fit-content;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    color: #FF0000;
+}
+/*租金*/
+.thingsRental{
+    font-size: 30rpx;
+    width: fit-content;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    color: #FF0000;
+}
+/*微信*/
+.thingsWeiXin{
+    font-size: 30rpx;
+    width: fit-content;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    color: #333333;
+}
+/*电话*/
+.thingsContact{
+    font-size: 30rpx;
+    width: fit-content;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-bottom: 15rpx;
+    color: #333333;
+}
+/*租用*/
+.payView{
+  
+    width: 100vw;
+    height: 8vh;
+    line-height: 100%;
+      background: #FFFFFF;
+}
+
+
+.hidden{display:none;height: 0}
+
+.rendalButton{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 35rpx;
+  
+    line-height: 8vh;
+
+}
+
