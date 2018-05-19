@@ -1,7 +1,6 @@
  
 import {LOGIN_URL} from './util/url';
 
-// var API_URL = "https://www.bjdtd.cc/login";
 
 function login(that,cb,code,encryptedData,iv){ 
    

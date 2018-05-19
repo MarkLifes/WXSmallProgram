@@ -11,9 +11,7 @@ var app = getApp();
 Page({
   data:{},
   onClickLogin:function(e){
-     login(this,{
-       success:function(data){
-           wx.navigateBack({
+     wx.navigateBack({
              delta: 1, // 回退前 delta(默认为1) 页面
              success: function(res){
                // success
@@ -25,8 +23,22 @@ Page({
                // complete
              }
            })
-       }
-     });
+    //  login(this,{
+    //    success:function(data){
+    //        wx.navigateBack({
+    //          delta: 1, // 回退前 delta(默认为1) 页面
+    //          success: function(res){
+    //            // success
+    //          },
+    //          fail: function(res) {
+    //            // fail
+    //          },
+    //          complete: function(res) {
+    //            // complete
+    //          }
+    //        })
+    //    }
+    //  });
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
