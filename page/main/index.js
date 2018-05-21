@@ -120,9 +120,9 @@ Page({
     var sk = wx.getStorageSync('sk');
     if ( sk== null || sk.length==0){
        console.log("未登陆")
-       wx.navigateTo({
-          url: '../login/login'
-       });
+    //    wx.navigateTo({
+    //       url: '../login/login'
+    //    });
        return;
     }else{
         findLibraryListAndSave(this,1,50);
