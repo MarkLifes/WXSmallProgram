@@ -2,12 +2,9 @@ var publish_url = ""
 
 var HOST = "";
 
-
 //登陆
 export var LOGIN_URL = HOST + "";
-//借入订单
 export var BORROW_URL = HOST + "";
-
 export var LEND_URL = HOST + "";
 
 export var MY_LIBRARY = HOST + "";
